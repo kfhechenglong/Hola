@@ -108,3 +108,120 @@ createApp(App).mount('#app')
     "dev": "vite"
 },
 ```
+## 打包文件
+
+### vite打包配置
+在使用`vite`进行组件打包之前，我们需要先进行`vite.config.ts`的配置，首先我们在
+`packages/components`文件夹下新建`vite.config.ts`配置文件；
+
+对文件设置配置项目：
+
+```ts
+import { defineConfig } from 'vite';
+import vue from "@vitejs/plugin-vue";
+
+export default defineConfig({
+    build: {
+        target: "modules",
+        outDir: 'es',
+        minify: false,
+        cssCodeSplit: true,
+        rollupOptions: {
+            // 忽略的打包文件
+            external: ['vue'],
+            input: ['src/index.ts'],
+            output: [
+                {
+                    format: 'es',
+                    entryFileNames: '[name].js',
+                    preserveModules: true,
+                    dir:'es',
+                    preserveModulesRoot: 'src'
+                },
+                {
+                    format: 'cjs',
+                    entryFileNames: '[name].js',
+                    preserveModules: true,
+                    dir: 'lib',
+                    preserveModulesRoot: 'src'
+                }
+            ]
+        },
+        lib: {
+            entry: './index.ts',
+            formats: ['es', 'cjs']
+        }
+    },
+    plugins: [
+        vue()
+    ]
+})
+```
+修改`package.json`，增加以下内容
+```json
+"build": "vite build",
+```
+然后运行`pnpm run build`执行打包程序，现在在`components`文件夹下出现了连个打包好的文件目录`es`、`lib`， 现在这两个文件时可以直接被引用的。
+### 解决声明文件的问题
+
+现在打包的库还有问题，因为我们是使用的ts，但是打包后并有将声明文件加入，现在我们使用`vite-plugin-dts`插件来解决这个问题；
+
+安装插件
+
+```sh
+pnpm install vite-plugin-dts -D -w
+```
+然后我们修改一下`vite.config.ts`文件,在`plugins`配置项下增加以下内容：
+
+```js
+import dts from "vite-plugin-dts";
+plugins: [
+    vue(),
+    dts({
+        // 默认会打包到es文件夹下
+        tsConfigFilePath: './../../tsconfig.json'
+    }),
+    dts({
+        outputDir: 'lib',
+        tsConfigFilePath: './../../tsconfig.json'
+    })
+]
+```
+再次执行打包命令`pnpm run build`，现在在`es`、`lib`目录下分别有了`index.d.ts`文件;
+
+## 发布组件
+
+在我们发布组件到npm库之前，需要对`component/package.json`文件做一些修改；
+```json
+{
+  "name": "hcl-org",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "scripts": {
+    "build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "es",
+    "lib"
+  ],
+  "types": "lib/index.d.ts",
+  "keywords": ["ui", "vue-ui"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@hcl-org/utils": "workspace:^1.0.0"
+  }
+}
+```
+### `main`和`module`
+其中`main`针对的是传统的CommonJS模块，`module`是针对ESModule环境的支持。
+### `files`
+
+`files`是指我们需要发布到`npm`上的目录，因为不可能`components`下的所有目录都被发布上去。
+
+### `typings`
+
+`typings`则是指定声明文件。

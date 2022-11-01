@@ -5,5 +5,5 @@
     </div>
 </template>
 <script lang="ts" setup>
-    import { Button } from 'hcl-org'
+    import { Button } from './../packages/components/es/index'
 </script>
