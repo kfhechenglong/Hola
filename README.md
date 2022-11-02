@@ -125,7 +125,7 @@ export default defineConfig({
         target: "modules",
         outDir: 'es',
         minify: false,
-        cssCodeSplit: true,
+        // cssCodeSplit: true,
         rollupOptions: {
             // 忽略的打包文件
             external: ['vue'],
@@ -225,3 +225,7 @@ plugins: [
 ### `typings`
 
 `typings`则是指定声明文件。
+
+### 发布
+
+在`components`目录下执行`pnpm publish --access public`即可发布到`npm`;
