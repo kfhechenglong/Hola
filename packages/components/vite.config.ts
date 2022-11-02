@@ -7,7 +7,7 @@ export default defineConfig({
         target: "modules",
         outDir: 'es',
         minify: false,
-        cssCodeSplit: true,
+        // cssCodeSplit: true,
         rollupOptions: {
             // 忽略的打包文件
             external: ['vue'],
