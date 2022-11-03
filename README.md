@@ -229,3 +229,5 @@ plugins: [
 ### 发布
 
 在`components`目录下执行`pnpm publish --access public`即可发布到`npm`;
+
+## docs文档开发
