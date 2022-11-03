@@ -1,6 +1,7 @@
 // .vitepress/theme/index.js
 import DefaultTheme from 'vitepress/theme'
 console.log(DefaultTheme)
+import { Button } from './../../../packages/components/index'
 export default {
   ...DefaultTheme,
   enhanceApp(ctx) {
@@ -8,6 +9,6 @@ export default {
     // DefaultTheme.enhanceApp(ctx)
 
     // register your custom global components
-    // ctx.app.component('MyGlobalComponent' /* ... */)
+    ctx.app.component('EleButton', Button)
   }
 }
