@@ -1,5 +1,5 @@
-import {testfn} from '@hcl-org/utils'
+// import {testfn} from '@hcl-org/utils'
 
 export * from './src'
 
-testfn()
+// testfn()

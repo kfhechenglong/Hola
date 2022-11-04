@@ -4,7 +4,7 @@
 set -e
 
 # 构建
-pnpm run docs:build
+npm run docs:build
 
 # # 进入组件目录
 # cd packages/components
