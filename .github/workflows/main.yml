@@ -30,12 +30,7 @@ jobs:
         run: npm run docs:build
       
       - name: Deploy to Pages
-        run: |
-          cd docs/.vitepress/dist 
-          git init
-          git config user.name "hechenglong"
-          git config user.email "${{ secrets.GIT_EMAIL }}"
-          git add -A
-          git commit -m 'deploy'
-          git push -f https://kfhechenglong:${{ secrets.ACCESS_TOKEN }}@github.com/Hola.git master:gh-pages
-          cd -
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # publish_dir:这里填写打包后的路径地址
+          publish_dir: ./docs/.vitepress/dist
