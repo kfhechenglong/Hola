@@ -30,7 +30,6 @@ jobs:
         run: npm run docs:build
       
       - name: Deploy to Pages
-      # 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
         run: |
           cd docs/.vitepress/dist 
           git init
