@@ -1,6 +1,6 @@
 export default {
   themeConfig: {
-    base:'/Hola/',
+//     base:'/Hola/',
     siteTitle: false,
     logo: "/logo.png",
     nav: [
