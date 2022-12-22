@@ -1,0 +1,27 @@
+{
+  "name": "@hcl-org/vue-quarter-picker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "scripts": {
+    "build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "es",
+    "lib"
+  ],
+  "types": "lib/index.d.ts",
+  "keywords": [
+    "季度组件选择器",
+    "vue",
+    "vue2.0",
+    "Ant Design"
+  ],
+  "author": "绝对零度",
+  "license": "MIT",
+  "dependencies": {
+    "sass": "^1.57.1"
+  }
+}
