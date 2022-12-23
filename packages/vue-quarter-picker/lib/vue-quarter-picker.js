@@ -1,5 +1,4 @@
 "use strict";
-const antDesignVue = require("ant-design-vue");
 const type = require("./type.js");
 const vue = require("vue");
 const _pluginVue_exportHelper = require("./_virtual/_plugin-vue_export-helper.js");
@@ -105,11 +104,6 @@ const _sfc_main = {
       this.visible = false;
       this.$emit("quarterOK", this.selectedYear + "-" + selectMonth);
     }
-  },
-  components: {
-    [antDesignVue.Popover.name]: antDesignVue.Popover,
-    [antDesignVue.Input.name]: antDesignVue.Input,
-    [antDesignVue.Icon.name]: antDesignVue.Icon
   }
 };
 const _hoisted_1 = { slot: "content" };

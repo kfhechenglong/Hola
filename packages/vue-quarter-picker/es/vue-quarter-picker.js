@@ -1,4 +1,3 @@
-import { Popover, Input, Icon } from "ant-design-vue";
 import { quarterProps } from "./type.js";
 import { resolveComponent, openBlock, createBlock, withCtx, createElementVNode, normalizeClass, createVNode, toDisplayString, createElementBlock, Fragment, renderList, createTextVNode, normalizeStyle, withModifiers } from "vue";
 import _export_sfc from "./_virtual/_plugin-vue_export-helper.js";
@@ -104,11 +103,6 @@ const _sfc_main = {
       this.visible = false;
       this.$emit("quarterOK", this.selectedYear + "-" + selectMonth);
     }
-  },
-  components: {
-    [Popover.name]: Popover,
-    [Input.name]: Input,
-    [Icon.name]: Icon
   }
 };
 const _hoisted_1 = { slot: "content" };

@@ -39,7 +39,6 @@
   </a-popover>
 </template>
 <script>
-  import { Popover, Icon, Input } from 'ant-design-vue'
   import { quarterProps } from "./type"
   export default {
     name: 'QuarterSelect',
@@ -155,11 +154,11 @@
         this.visible = false
         this.$emit('quarterOK', this.selectedYear + '-' + selectMonth)
       }
-    },
-    components: {
-      [Popover.name]: Popover,
-      [Input.name]: Input,
-      [Icon.name]: Icon
     }
+    // components: {
+    //   [Popover.name]: Popover,
+    //   [Input.name]: Input,
+    //   [Icon.name]: Icon
+    // }
   }
 </script>
