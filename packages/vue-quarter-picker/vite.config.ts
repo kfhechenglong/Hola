@@ -5,24 +5,26 @@ import dts from "vite-plugin-dts";
 export default defineConfig({
     build: {
         target: "modules",
-        outDir: 'es',
+        // outDir: 'dist',
         minify: false,
-        // cssCodeSplit: true,
+        cssCodeSplit: true,
         rollupOptions: {
             // 忽略的打包文件
-            external: ['vue', 'ant-design-vue', 'Popover', 'Icon', 'Input'],
+            external: ['vue', 'ant-design-vue'],
             input: ['src/index.ts'],
             output: [
                 {
                     format: 'es',
                     entryFileNames: '[name].js',
                     preserveModules: true,
+                    assetFileNames: `styles/[name].css`,
                     dir:'es',
                     preserveModulesRoot: 'src'
                 },
                 {
                     format: 'cjs',
                     entryFileNames: '[name].js',
+                    assetFileNames: `styles/[name].css`,
                     preserveModules: true,
                     dir: 'lib',
                     preserveModulesRoot: 'src'
@@ -37,11 +39,8 @@ export default defineConfig({
     plugins: [
         vue(),
         dts({
-            // 默认会打包到es文件夹下
-            tsConfigFilePath: './../../tsconfig.json'
-        }),
-        dts({
-            outputDir: 'lib',
+            outputDir: ['es', 'lib'],
+            include: './src',
             tsConfigFilePath: './../../tsconfig.json'
         })
     ]

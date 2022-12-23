@@ -38,10 +38,12 @@ export default defineConfig({
         vue(),
         dts({
             // 默认会打包到es文件夹下
+            include: './src',
             tsConfigFilePath: './../../tsconfig.json'
         }),
         dts({
             outputDir: 'lib',
+            include: './src',
             tsConfigFilePath: './../../tsconfig.json'
         })
     ]

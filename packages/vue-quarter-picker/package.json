@@ -12,6 +12,12 @@
     "es",
     "lib"
   ],
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./es/index.js"
+    }
+  },
   "types": "lib/index.d.ts",
   "keywords": [
     "季度组件选择器",

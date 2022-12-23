@@ -1,3 +1,11 @@
+import { App } from 'vue';
 import QuarterSelect from './vue-quarter-picker.vue'
-
-export default QuarterSelect
+import "./style.scss";
+export {
+    QuarterSelect
+}
+export default {
+    install(app: App) {
+        app.component('QuarterSelect', QuarterSelect);
+    }
+}

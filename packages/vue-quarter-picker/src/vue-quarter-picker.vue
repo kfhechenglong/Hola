@@ -42,7 +42,7 @@
   import { Popover, Icon, Input } from 'ant-design-vue'
   import { quarterProps } from "./type"
   export default {
-    name: 'quarterSelect',
+    name: 'QuarterSelect',
     data () {
       const currentDate = new Date() // 当前时间
       // 季度数据
@@ -163,97 +163,3 @@
     }
   }
 </script>
-<style lang="scss">
-$primary: #2FC6A3;
-.quarter-input {
-  .clear-icon {
-    display: none;
-  }
-}
-// 输入框
-.has-quarter-value.quarter-input {
-  &:hover {
-    .clear-icon {
-      display: block;
-      color: rgba(0, 0, 0, 0.25);
-      background-color: #fff;
-      &:hover {
-        color: #666666
-      }
-    }
-    .time-icon {
-      display: none;
-    }
-  }
-}
-// 季度数据弹窗
-.quarterPickerBox{
-  width: 250px;
-  .quarterLabel{
-    color: #333;
-    float: left;
-    border-radius: 4px;
-    width: calc(50% - 10px);
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 10px;
-    &:hover{
-      color: white;
-      background-color: $primary;
-    }
-    &[disabled]{
-      color: rgba(0, 0, 0, 0.25);
-      background-color: transparent;
-      border-color: transparent;
-      text-shadow: none;
-      box-shadow: none;
-      &:hover{
-        color: rgba(0, 0, 0, 0.25);
-        background-color: transparent;
-        border-color: transparent;
-        text-shadow: none;
-        box-shadow: none;
-      }
-    }
-  }
-
-  .quarterActive {
-    color: white;
-    background-color: $primary;
-  }
-  .ant-popover-inner-content{
-    overflow: hidden;
-    padding: 0;
-  }
-  .content-year{
-    padding: 10px;
-    border-bottom: 1px solid #ebedf0;
-    margin-bottom: 5px;
-    display: flex;
-    i{
-      flex: 1;
-      width: 100%;
-      text-align: center;
-      font-weight: bold;
-      user-select:none;
-      display: block;
-    }
-    span{
-      cursor: pointer;
-      &:hover{
-        color: $primary;
-      }
-    }
-    .disable{
-      cursor: not-allowed;
-      color: rgba(0, 0, 0, 0.25);
-      &:hover{
-        color: rgba(0, 0, 0, 0.25);
-      }
-    }
-  }
-  .quarterBtns{
-    padding: 0 10px;
-  }
-}
-</style>
