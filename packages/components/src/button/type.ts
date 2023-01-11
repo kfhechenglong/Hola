@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/named
 import {ExtractPropTypes} from "vue";
 export const ButtonType = ['primary', 'success', 'info', 'warning', 'danger','text'];
 // 定义按钮类型

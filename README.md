@@ -35,6 +35,32 @@ packages:
 ```
 根据上面的目录结构很显然你在根目录下新`packages`、`docs`和`examples`文件夹，`packages`文件夹存放我们开发的包，`docs`文件夹存放我们的开发文档,`examples`用来调试我们的组件
 
+### 配置格式化工具
+
+必要的工具是提高开发效率，降低bug率，避免不必要低级错误的重要帮手之一。常见的`Formatter/Linter`工具一般包括`ESLint`、`Prettier`、`StyleLint`等
+
+我们先在`VSCode`中安装相关插件：
+- `ESLint`
+- `Prettier`
+- `StyleLint`
+另外为了支持`Vue`语法高亮、语法提示等，我们需要安装Vue3的插件，这里安装`Volar`
+
+然后将插件配置在json文件中`.vscode/extensions.json`，后续别的开发人员打开这个项目时，VSCode就会推荐安装这些插件；
+
+```json
+{
+    "recommendations": [
+        "stylelint.vscode-stylelint",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "Vue.volar"
+    ]
+}
+```
+
+#### 配置ESLint
+
+ESLint安装，
 ## 基本依赖环境
 
 

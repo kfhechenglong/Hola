@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import vue from "@vitejs/plugin-vue";
 import dts from "vite-plugin-dts";
+import eslint from "vite-plugin-eslint"
 
 export default defineConfig({
     build: {
@@ -36,6 +37,7 @@ export default defineConfig({
     },
     plugins: [
         vue(),
+        eslint(),
         dts({
             // 默认会打包到es文件夹下
             include: './src',

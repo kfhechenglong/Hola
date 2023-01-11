@@ -1,13 +1,13 @@
 <template>
-    <button class="hcl-button" :class="styleClass">
-        <slot></slot>
-    </button>
+  <button class="hcl-button" :class="styleClass">
+    <slot></slot>
+  </button>
 </template>
 <script lang="ts">
-import { computed, defineComponent} from "vue"
-import {buttonProps} from "./type"
+import { computed, defineComponent } from 'vue'
+import { buttonProps } from './type'
 export default defineComponent({
-    name: "hcl-button",
+    name: 'hcl-button',
     props: buttonProps,
     setup(props) {
         const styleClass = computed(() => {
@@ -22,7 +22,6 @@ export default defineComponent({
 })
 </script>
 <style lang="less">
-
 .hcl-button {
   display: inline-block;
   line-height: 1;
@@ -41,28 +40,33 @@ export default defineComponent({
   padding: 12px 20px;
   font-size: 14px;
   border-radius: 4px;
+
   &:hover {
     color: #409eff;
     border-color: #c6e2ff;
     background-color: #ecf5ff;
   }
 }
+
 .hcl-button--primary {
   color: #fff;
   background-color: #409eff;
   border-color: #409eff;
+
   &:hover {
     background: #66b1ff;
     border-color: #66b1ff;
     color: #fff;
   }
 }
+
 .hcl-button--text {
   border-color: transparent;
   color: #409eff;
   background: transparent;
   padding-left: 0;
   padding-right: 0;
+
   &:hover {
     color: #66b1ff;
     border-color: transparent;
