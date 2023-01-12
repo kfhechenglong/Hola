@@ -7,8 +7,9 @@ export type InstallType<T> = T &
     }
 
 export const withInstall = <T>(comp: T) => {
-    const c = comp as any
+    let c = comp as any
     console.log(c)
+
     c.install = function (app: App) {
         app.component(c.displayName || c.name, c)
     }
