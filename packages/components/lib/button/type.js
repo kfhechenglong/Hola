@@ -1,6 +1,13 @@
 "use strict";
 Object.defineProperties(exports, { __esModule: { value: true }, [Symbol.toStringTag]: { value: "Module" } });
-const ButtonType = ["primary", "success", "info", "warning", "danger", "text"];
+const ButtonType = [
+  "primary",
+  "success",
+  "info",
+  "warning",
+  "danger",
+  "text"
+];
 const buttonProps = {
   type: {
     type: String,

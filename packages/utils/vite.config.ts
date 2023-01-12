@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
 import dts from 'vite-plugin-dts'
 import eslint from 'vite-plugin-eslint'
 
@@ -11,22 +10,21 @@ export default defineConfig({
         // cssCodeSplit: true,
         rollupOptions: {
             // 忽略的打包文件
-            external: ['vue', '@hcl-org/utils'],
-            input: ['src/index.ts'],
+            input: ['index.ts'],
             output: [
                 {
                     format: 'es',
                     entryFileNames: '[name].js',
                     preserveModules: true,
                     dir: 'es',
-                    preserveModulesRoot: 'src',
+                    preserveModulesRoot: 'utils',
                 },
                 {
                     format: 'cjs',
                     entryFileNames: '[name].js',
                     preserveModules: true,
                     dir: 'lib',
-                    preserveModulesRoot: 'src',
+                    preserveModulesRoot: 'utils',
                 },
             ],
         },
@@ -36,12 +34,9 @@ export default defineConfig({
         },
     },
     plugins: [
-        vue(),
         eslint(),
         dts({
             outputDir: ['lib', 'es'],
-            include: './src',
-            tsConfigFilePath: './../../tsconfig.json',
         }),
     ],
 })

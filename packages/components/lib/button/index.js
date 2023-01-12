@@ -1,3 +1,5 @@
 "use strict";
 const button = require("./button.js");
-module.exports = button;
+const utils = require("@hcl-org/utils");
+const index = utils.withInstall(button);
+module.exports = index;

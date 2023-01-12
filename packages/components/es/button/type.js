@@ -1,4 +1,11 @@
-const ButtonType = ["primary", "success", "info", "warning", "danger", "text"];
+const ButtonType = [
+  "primary",
+  "success",
+  "info",
+  "warning",
+  "danger",
+  "text"
+];
 const buttonProps = {
   type: {
     type: String,

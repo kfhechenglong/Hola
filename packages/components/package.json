@@ -17,6 +17,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@hcl-org/utils": "workspace:^1.0.0"
+    "@hcl-org/utils": "workspace:^1.1.0"
   }
 }

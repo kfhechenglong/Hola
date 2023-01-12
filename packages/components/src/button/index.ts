@@ -1,3 +1,3 @@
 import Button from './button.vue'
-
-export default Button
+import { withInstall } from '@hcl-org/utils'
+export default withInstall(Button)
