@@ -8,7 +8,7 @@
     "docs:build": "vitepress build docs",
     "prepare": "husky install",
     "lint": "eslint . --ext .vue,.ts,.jsx,.tsx --fix",
-    "prettier": "prettier --write ./**/*.{vue,ts,tsx,jsx,less,scss,json,md}",
+    "prettier": "prettier --write ./packages/**/*.{vue,ts,tsx,jsx,less,scss,json,md}",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
