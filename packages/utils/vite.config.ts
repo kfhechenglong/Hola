@@ -14,14 +14,14 @@ export default defineConfig({
             output: [
                 {
                     format: 'es',
-                    entryFileNames: '[name].js',
+                    entryFileNames: '[name].mjs',
                     preserveModules: true,
                     dir: 'es',
                     preserveModulesRoot: 'utils',
                 },
                 {
                     format: 'cjs',
-                    entryFileNames: '[name].js',
+                    entryFileNames: '[name].cjs',
                     preserveModules: true,
                     dir: 'lib',
                     preserveModulesRoot: 'utils',
@@ -36,6 +36,7 @@ export default defineConfig({
     plugins: [
         eslint(),
         dts({
+            exclude: ['./es', './lib'],
             outputDir: ['lib', 'es'],
         }),
     ],

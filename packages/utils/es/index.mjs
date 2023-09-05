@@ -1,4 +1,4 @@
-import { withInstall } from "./install.js";
+import { withInstall } from "./install.mjs";
 const testfn = () => {
   console.log("utils-test2");
 };
