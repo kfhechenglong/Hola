@@ -1,0 +1,21 @@
+{
+  "name": "@hcl-org/city",
+  "version": "1.0.0",
+  "description": "省市区县",
+  "main": "lib/index.cjs",
+  "module": "es/index.mjs",
+  "scripts": {
+    "build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "city"
+  ],
+  "files": [
+    "es",
+    "lib"
+  ],
+  "types": "lib/index.d.ts",
+  "author": "jueduilingdu",
+  "license": "MIT"
+}
